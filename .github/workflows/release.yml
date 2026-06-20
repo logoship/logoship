@@ -1,0 +1,107 @@
+name: Release
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "brand/**"
+      - "channel/**"
+      - "models/**"
+      - "tools/**"
+      - "manifest.json"
+      - ".github/workflows/release.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-${{ github.repository }}
+  cancel-in-progress: false
+
+jobs:
+  release:
+    # Skip release commits to avoid bump loop (chore(release): ...)
+    if: ${{ !startsWith(github.event.head_commit.message, 'chore(release):') }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Compute next patch version
+        id: version
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          latest_tag="$(git tag -l 'v*' --sort=-v:refname | head -n1 || true)"
+          if [[ -z "$latest_tag" ]]; then
+            next="1.0.0"
+          else
+            ver="${latest_tag#v}"
+            IFS='.' read -r major minor patch <<< "$ver"
+            major="${major:-0}"
+            minor="${minor:-0}"
+            patch="${patch:-0}"
+            next="${major}.${minor}.$((patch + 1))"
+          fi
+
+          echo "latest_tag=${latest_tag:-none}" >> "$GITHUB_OUTPUT"
+          echo "next_version=${next}" >> "$GITHUB_OUTPUT"
+          echo "tag=v${next}" >> "$GITHUB_OUTPUT"
+          echo "Next version: v${next} (from ${latest_tag:-none})"
+
+      - name: Update manifest.json
+        shell: bash
+        run: |
+          set -euo pipefail
+          node <<'NODE'
+          const fs = require('fs');
+          const repo = process.env.GITHUB_REPOSITORY;
+          const version = process.env.NEXT_VERSION;
+          const manifestPath = 'manifest.json';
+          const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+          manifest.version = version;
+          manifest.cdn = `https://cdn.jsdelivr.net/gh/${repo}@${version}`;
+          fs.writeFileSync(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`);
+          NODE
+        env:
+          NEXT_VERSION: ${{ steps.version.outputs.next_version }}
+
+      - name: Commit manifest bump
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add manifest.json
+          git commit -m "chore(release): v${{ steps.version.outputs.next_version }}"
+          git push origin main
+
+      - name: Create and push tag
+        shell: bash
+        run: |
+          set -euo pipefail
+          git tag "${{ steps.version.outputs.tag }}"
+          git push origin "${{ steps.version.outputs.tag }}"
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.version.outputs.tag }}
+          name: ${{ steps.version.outputs.tag }}
+          generate_release_notes: true
+          body: |
+            SVG logo assets release **${{ steps.version.outputs.tag }}**.
+
+            **jsDelivr CDN base**
+            ```
+            https://cdn.jsdelivr.net/gh/${{ github.repository }}@${{ steps.version.outputs.next_version }}
+            ```
+
+            **Example**
+            ```
+            https://cdn.jsdelivr.net/gh/${{ github.repository }}@${{ steps.version.outputs.next_version }}/channel/Telegram-icon.svg
+            ```

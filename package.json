@@ -1,0 +1,18 @@
+{
+  "name": "@logoship/logoship",
+  "version": "1.0.0",
+  "description": "SVG logo assets for AucoBot — served via jsDelivr GitHub CDN",
+  "private": false,
+  "files": [
+    "brand",
+    "channel",
+    "models",
+    "tools",
+    "manifest.json"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/logoship/logoship.git"
+  },
+  "license": "MIT"
+}

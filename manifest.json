@@ -1,7 +1,7 @@
 {
-  "name": "logocall",
+  "name": "logoship",
   "version": "1.0.0",
-  "cdn": "https://cdn.jsdelivr.net/gh/mankhb2k/logocall@1.0.0",
+  "cdn": "https://cdn.jsdelivr.net/gh/logoship/logoship@1.0.0",
   "categories": {
     "brand": ["aucobot-icon.svg"],
     "channel": [
