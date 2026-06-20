@@ -1,0 +1,38 @@
+{
+  "name": "logocall",
+  "version": "1.0.0",
+  "cdn": "https://cdn.jsdelivr.net/gh/mankhb2k/logocall@1.0.0",
+  "categories": {
+    "brand": ["aucobot-icon.svg"],
+    "channel": [
+      "BlueBubble-icon.svg",
+      "Discord-icon.svg",
+      "GoogleChat-icon.svg",
+      "Lark-icon.svg",
+      "Line-icon.svg",
+      "Matrix-icon.svg",
+      "MicrosoftTeam-icon.svg",
+      "Signal-icon.svg",
+      "Slack-icon.svg",
+      "Telegram-icon.svg",
+      "Twitch-icon.svg",
+      "WhatsApp-icon.svg",
+      "Zalo-icon.svg"
+    ],
+    "models": [
+      "ChatGPT-icon.svg",
+      "Claude-icon.svg",
+      "DeepSeek-icon.svg",
+      "Gemini-icon.svg",
+      "Grok-icon.svg",
+      "Mistral-icon.svg"
+    ],
+    "tools": [
+      "GitHub-icon.svg",
+      "Gmail-icon.svg",
+      "GoogleCalendar-icon.svg",
+      "GoogleDrive-icon.svg",
+      "Notion-icon.svg"
+    ]
+  }
+}
