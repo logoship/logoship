@@ -1,14 +1,33 @@
 {
   "name": "@logoship/logoship",
-  "version": "1.0.0",
-  "description": "SVG logo assets for AucoBot — served via jsDelivr GitHub CDN",
+  "version": "1.0.1",
+  "description": "Shared SVG logos for any project — served via jsDelivr GitHub CDN",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./logos.json": "./logos.json",
+    "./social": "./social/index.js",
+    "./ai": "./ai/index.js",
+    "./google": "./google/index.js",
+    "./design": "./design/index.js",
+    "./other": "./other/index.js"
+  },
+  "scripts": {
+    "build": "node scripts/generate-index.mjs",
+    "validate": "node scripts/validate-svg.mjs",
+    "prebuild": "node scripts/validate-svg.mjs"
+  },
   "private": false,
   "files": [
-    "brand",
-    "channel",
-    "models",
-    "tools",
-    "manifest.json"
+    "index.js",
+    "logos.json",
+    "manifest.json",
+    "social",
+    "ai",
+    "google",
+    "design",
+    "other"
   ],
   "repository": {
     "type": "git",

@@ -2,39 +2,68 @@
   "name": "logoship",
   "version": "1.0.1",
   "cdn": "https://cdn.jsdelivr.net/gh/logoship/logoship@1.0.1",
+  "logos": {
+    "bluebubble": "social/bluebubble.svg",
+    "discord": "social/discord.svg",
+    "github": "social/github.svg",
+    "lark": "social/lark.svg",
+    "line": "social/line.svg",
+    "matrix": "social/matrix.svg",
+    "microsoft-teams": "social/microsoft-teams.svg",
+    "signal": "social/signal.svg",
+    "slack": "social/slack.svg",
+    "telegram": "social/telegram.svg",
+    "twitch": "social/twitch.svg",
+    "whatsapp": "social/whatsapp.svg",
+    "zalo": "social/zalo.svg",
+    "chatgpt": "ai/chatgpt.svg",
+    "claude": "ai/claude.svg",
+    "deepseek": "ai/deepseek.svg",
+    "gemini": "ai/gemini.svg",
+    "grok": "ai/grok.svg",
+    "mistral": "ai/mistral.svg",
+    "gmail": "google/gmail.svg",
+    "google-calendar": "google/google-calendar.svg",
+    "google-chat": "google/google-chat.svg",
+    "google-drive": "google/google-drive.svg",
+    "notion": "design/notion.svg",
+    "aucobot": "other/aucobot.svg"
+  },
   "categories": {
-    "brand": [
-      "aucobot-icon.svg"
+    "social": [
+      "bluebubble.svg",
+      "discord.svg",
+      "github.svg",
+      "lark.svg",
+      "line.svg",
+      "matrix.svg",
+      "microsoft-teams.svg",
+      "signal.svg",
+      "slack.svg",
+      "telegram.svg",
+      "twitch.svg",
+      "whatsapp.svg",
+      "zalo.svg"
     ],
-    "channel": [
-      "BlueBubble-icon.svg",
-      "Discord-icon.svg",
-      "GoogleChat-icon.svg",
-      "Lark-icon.svg",
-      "Line-icon.svg",
-      "Matrix-icon.svg",
-      "MicrosoftTeam-icon.svg",
-      "Signal-icon.svg",
-      "Slack-icon.svg",
-      "Telegram-icon.svg",
-      "Twitch-icon.svg",
-      "WhatsApp-icon.svg",
-      "Zalo-icon.svg"
+    "ai": [
+      "chatgpt.svg",
+      "claude.svg",
+      "deepseek.svg",
+      "gemini.svg",
+      "grok.svg",
+      "mistral.svg"
     ],
-    "models": [
-      "ChatGPT-icon.svg",
-      "Claude-icon.svg",
-      "DeepSeek-icon.svg",
-      "Gemini-icon.svg",
-      "Grok-icon.svg",
-      "Mistral-icon.svg"
+    "google": [
+      "gmail.svg",
+      "google-calendar.svg",
+      "google-chat.svg",
+      "google-drive.svg"
     ],
-    "tools": [
-      "GitHub-icon.svg",
-      "Gmail-icon.svg",
-      "GoogleCalendar-icon.svg",
-      "GoogleDrive-icon.svg",
-      "Notion-icon.svg"
+    "design": [
+      "notion.svg"
+    ],
+    "other": [
+      "aucobot.svg"
     ]
   }
 }
