@@ -1,5 +1,5 @@
 /** Auto-generated — do not edit. Run: npm run build */
-const CDN = 'https://cdn.jsdelivr.net/gh/logoship/logoship@1.0.1/google';
+const CDN = 'https://cdn.jsdelivr.net/gh/logoship/logoship@1.0.2/google';
 
 const PATHS = {
   'gmail': 'gmail.svg',

@@ -1,7 +1,7 @@
 {
   "name": "logoship",
-  "version": "1.0.1",
-  "cdn": "https://cdn.jsdelivr.net/gh/logoship/logoship@1.0.1",
+  "version": "1.0.2",
+  "cdn": "https://cdn.jsdelivr.net/gh/logoship/logoship@1.0.2",
   "logos": {
     "bluebubble": "social/bluebubble.svg",
     "discord": "social/discord.svg",

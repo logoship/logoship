@@ -1,7 +1,7 @@
 /** Auto-generated — fixed size; scales via logos.json, not this file. Run: npm run build */
 import paths from './logos.json' with { type: 'json' };
 
-const CDN = 'https://cdn.jsdelivr.net/gh/logoship/logoship@1.0.1';
+const CDN = 'https://cdn.jsdelivr.net/gh/logoship/logoship@1.0.2';
 
 /** @param {string} name Logo name, e.g. "telegram", "google-drive" */
 export function logo(name) {

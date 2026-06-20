@@ -1,5 +1,5 @@
 /** Auto-generated — do not edit. Run: npm run build */
-const CDN = 'https://cdn.jsdelivr.net/gh/logoship/logoship@1.0.1/social';
+const CDN = 'https://cdn.jsdelivr.net/gh/logoship/logoship@1.0.2/social';
 
 const PATHS = {
   'bluebubble': 'bluebubble.svg',

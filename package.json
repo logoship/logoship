@@ -1,6 +1,6 @@
 {
   "name": "@logoship/logoship",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Shared SVG logos for any project — served via jsDelivr GitHub CDN",
   "type": "module",
   "main": "index.js",
