@@ -1,9 +1,11 @@
 {
   "name": "logoship",
-  "version": "1.0.0",
-  "cdn": "https://cdn.jsdelivr.net/gh/logoship/logoship@1.0.0",
+  "version": "1.0.1",
+  "cdn": "https://cdn.jsdelivr.net/gh/logoship/logoship@1.0.1",
   "categories": {
-    "brand": ["aucobot-icon.svg"],
+    "brand": [
+      "aucobot-icon.svg"
+    ],
     "channel": [
       "BlueBubble-icon.svg",
       "Discord-icon.svg",
